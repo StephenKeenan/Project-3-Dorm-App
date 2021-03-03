@@ -1,3 +1,3 @@
 # DormApp
 
-Refresh your dorm
+Refresh your dormroom
