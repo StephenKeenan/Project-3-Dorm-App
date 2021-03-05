@@ -63,7 +63,7 @@ const Dashboard = (props) => {
             <h5>
               <b>Welcome to DormApp, {user.name.split(" ")[0]}!</b>
             </h5>
-            <p>Select which aesthetic mathces you! </p>
+            <p>Select which aesthetic matches you! </p>
             {/* <p>Choose the save button to save favorite options. </p> */}
               <Grid
                 container
