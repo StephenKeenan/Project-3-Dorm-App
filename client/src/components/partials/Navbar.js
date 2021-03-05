@@ -3,7 +3,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import { logoutUser } from "../../store/actions/authActions";
 import { Store } from "../../store";
 import logo from "../../assets/dormlogo.png";
-import "./Navbar.css";
+// import "./Navbar.css";
 
 const Navbar = (props) => {
   const history = useHistory();
@@ -24,15 +24,15 @@ const Navbar = (props) => {
 
         
         <NavLink
-          to="/"
-          className="brand-logo center"
+          to="/dashboard"
+          className="brand-logo left"
           style={{
             borderRadius: "3px",
             // background: "blue",
             letterSpacing: "4px",
             marginTop: "5px",
             fontFamily: "fantasy",
-            fontSize: "45px",
+            fontSize: "35px",
             color: "#ff6f00",
           }}
         >
@@ -44,7 +44,7 @@ const Navbar = (props) => {
         </NavLink>
         </div>
         <ul id="nav-mobile" class="right">
-          <li>
+          {/* <li>
             {" "}
             {state.auth.isAuthenticated ? (
               <NavLink to="/dashboard" className="orange-text">
@@ -53,7 +53,7 @@ const Navbar = (props) => {
             ) : (
               " "
             )}
-          </li>
+          </li> */}
 
           <li>
             {" "}

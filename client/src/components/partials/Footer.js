@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -24,6 +25,7 @@ const Footer = (props) => {
       <Toolbar>
         <Typography variant="body2" align="center">
           DormApp K^2 Creations &copy; 2021 
+          
         </Typography>
       </Toolbar>
     </AppBar>
