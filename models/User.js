@@ -18,7 +18,7 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  robot: [{ type: mongoose.Schema.Types.ObjectId, ref: "Robot" }],
+  savedGear: [{ type: mongoose.Schema.Types.ObjectId, ref: "Gear" }],
 });
 
 module.exports = User = mongoose.model("User", UserSchema);

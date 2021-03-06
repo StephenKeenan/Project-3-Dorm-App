@@ -12,7 +12,7 @@
         "install": "cd ./client && npm install",
         "build": "cd ./client && npm run build",
         "heroku-postbuild": "npm run build",
-        "seed": "node seeders/seed.js"
+        "seed": "node scripts/seed.js"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.3",
@@ -28,6 +28,7 @@
         "is-empty": "^1.2.0",
         "jsonwebtoken": "^8.5.1",
         "lodash": "~4.17.20",
+        "material-ui-image": "^3.3.1",
         "mongoose": "~5.11.15",
         "passport": "~0.4.1",
         "passport-jwt": "^4.0.0",
