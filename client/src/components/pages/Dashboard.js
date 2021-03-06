@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import pinkImage from "../../assets/pinkDorm.png";
 import battleImage from "../../assets/battleDorm.png";
 import minImage from "../../assets/minimalDorm.png";
+import Image from "material-ui-image";
 
 const Dashboard = (props) => {
   const { state, dispatch } = useContext(Store);
@@ -49,9 +50,15 @@ const Dashboard = (props) => {
     },
     root: {
       flexGrow: 1,
-      
+
     },
   }));
+
+{/* <ListItem button component={Link} to="/dashboard"></ListItem> */}
+
+<Image
+  src="http://loremflickr.com/300/200"
+/>
 
   const classes = useStyles();
   return (
@@ -60,35 +67,47 @@ const Dashboard = (props) => {
         <Grid>
           <div>
             <div>
-            <h5>
-              <b>Welcome to DormApp, {user.name.split(" ")[0]}!</b>
-            </h5>
-            <p>Select which aesthetic matches you! </p>
-            {/* <p>Choose the save button to save favorite options. </p> */}
+              <h5>
+                <b>Welcome to DormApp, {user.name.split(" ")[0]}!</b>
+              </h5>
+              <p className="center">Select which aesthetic matches you! </p>
+              {/* <p>Choose the save button to save favorite options. </p> */}
               <Grid
-                container
+                // container
                 alignItems="flex"
                 lassName={classes.root}
-                spacing={1}
+                spacing={4}
               >
-                
-                <Grid item justify="auto" xs={12} spacing={6}>
+                      
+
+
+                <Grid item justify="auto" xs={12} spacing={4}>
                   <img class="responsive-img" alt="pinkDorm" src={pinkImage} />
+                  <div className="center">
+                    <a class="waves-effect waves-light btn-small">button</a>
+                    <a class="waves-effect waves-light btn-small">button</a>
+                    <a class="waves-effect waves-light btn-small">button</a>
+                    {/* <a class="waves-effect waves-light btn-small">button</a> */}
+                  </div>
+                  <br></br>
+                  <div class="video-container">
+                    <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+                  </div>
                   <img class="responsive-img" alt="battleDorm" src={battleImage} />
                   <img class="responsive-img" alt="minimalDorm" src={minImage} />
-                  
+
                 </Grid>
-                
+
               </Grid>
             </div>
           </div>
           <br></br><br></br><br></br><br></br>
           <br></br><br></br><br></br>
         </Grid>
-        
-        <Grid item justify="sm" xs={6} spacing={6}>
-          {/* <Pca9685 /> */}
-         </Grid>
+
+        {/* <Grid item justify="sm" xs={6} spacing={6}>
+          <Pca9685 />
+         </Grid> */}
       </div>
     </MotionContext.Provider>
   );

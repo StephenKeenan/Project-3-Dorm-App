@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import pinkImage from "../../assets/pinkDorm.png";
 import { Icon, Button, Grid, Container, ButtonGroup, Card, CardContent } from "@material-ui/core";
 import DeleteIcon from '@material-ui/icons/Delete';
+import { text } from "body-parser";
 
 
 
@@ -102,7 +103,7 @@ const SavedStyles = (props) => {
       <Grid container direction="row">
         <Grid item>
             <h4>
-              <b>Welcome to the favorites Page!</b>
+              <p style={{ fontWeight:600, textAlign:'center' }}>Your Saved Items!</p>
             </h4>
             <img class="responsive-img" alt="logoRoboArm" src={pinkImage} />
         </Grid>
@@ -113,7 +114,7 @@ const SavedStyles = (props) => {
             </h5>
           <Card>
             <CardContent>
-          {/* <ButtonGroup
+          <ButtonGroup
            
             padding="50px"
             orientation="vertical"
@@ -152,7 +153,7 @@ const SavedStyles = (props) => {
                 />
               </div>
             ))}
-          </ButtonGroup> */}
+          </ButtonGroup>
           </CardContent>
           </Card>
         </Grid>
