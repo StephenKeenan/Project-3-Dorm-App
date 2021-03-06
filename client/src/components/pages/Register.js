@@ -41,10 +41,10 @@ const Register = props => {
           </Link>
           <div className="col s12" style={{ paddingLeft: '11.250px' }}>
             <h4>
-              <b>Register</b> below
+              <b>Create a New Account</b> 
             </h4>
             <p className="grey-text text-darken-1">
-              Already have an account? <Link to="/login">Login</Link>
+              If account is active <Link to="/login">Login</Link>
             </p>
           </div>
           <form noValidate onSubmit={onSubmit}>

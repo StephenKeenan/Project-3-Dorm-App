@@ -14,6 +14,7 @@ import Login from "./components/pages/Login";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import Dashboard from "./components/pages/Dashboard";
 import SavedStyles from "./components/pages/SavedStyles";
+import PinkDorm from "./components/pages/PinkDorm";
 
 const App = () => {
   const { dispatch } = useContext(Store);
@@ -45,6 +46,9 @@ const App = () => {
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/saveDorm" component={SavedStyles} />
+          <PrivateRoute exact path="/PinkDorm" component={PinkDorm} />
+          {/* <PrivateRoute exact path="/saveDorm" component={SavedStyles} />
+          <PrivateRoute exact path="/saveDorm" component={SavedStyles} /> */}
         </Switch>
         <Footer />
       </div>
