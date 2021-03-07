@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { Robot } = require("../models");
+const { Dorm } = require("../models");
 
-router.get("/robotmotions", async (req, res) => {
+router.get("/dormChoices", async (req, res) => {
   try {
-    const robotMotions = await Robot.find({});
-    res.json(robotMotions);
+    const dormChoice = await Dorm.find({});
+    res.json(dormChoice);
   } catch (err) {
     res.status(400).json(err.message);
   }

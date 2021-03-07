@@ -73,7 +73,7 @@ const Register = props => {
               <span className="red-text">{errors.password2}</span>
             </div>
             <div className="col s12" style={{ paddingLeft: '11.250px' }}>
-              <button className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
+              <button className="btn btn-large waves-effect waves-light orange-text hoverable blue accent-3" style={{
                 width: '150px',
                 borderRadius: '3px',
                 letterSpacing: '1.5px',

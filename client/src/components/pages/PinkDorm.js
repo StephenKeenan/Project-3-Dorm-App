@@ -6,11 +6,12 @@ import API from "../../utils/apiHelper";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import pinkImage from "../../assets/pinkDorm.png";
-import gamerImage from "../../assets/gamerDorm.png";
-import minImage from "../../assets/minimalDorm.png";
+// import gamerImage from "../../assets/gamerDorm.png";
+// import minImage from "../../assets/minimalDorm.png";
 // import Image from "material-ui-image";
+// import Application from "./components/pages/Application"
 
-const Dashboard = (props) => {
+const PinkDorm = (props) => {
   const { state, dispatch } = useContext(Store);
   const user = state.auth.user;
 
@@ -39,7 +40,6 @@ const Dashboard = (props) => {
 
 
 
-  
 
   const classes = useStyles();
   return (
@@ -53,59 +53,36 @@ const Dashboard = (props) => {
               </h5>
               <p className="center">Select which aesthetic matches you! </p>
               {/* <p>Choose the save button to save favorite options. </p> */}
-              <Grid
-                // container
-                alignItems="flex"
-                lassName={classes.root}
-                spacing={4}
-              >
+              <Grid container spacing={3}>                      
+             
 
-
-
-                <Grid item justify="auto" xs={12} spacing={4}>
-
-                  <Link to="/pinkout">
-                    <div className="center">All Out Pink
-                       <img className="responsive-img" alt="pinkDorm" src={pinkImage} />
+                <Grid item xs={12}>                  
+                    <div className="center orange-text">All Out Pink
+                       <img className="responsive-img" alt="pinkDorm" src={pinkImage} />                      
                     </div>
-
-
-                  </Link>
-
-
-
-                  <br></br><br></br>
-
-                  
-                  <Link to="/gamer">
-
-                    <div className="center">Gamer
-                          <img class="responsive-img" alt="battleDorm" src={gamerImage} />
-                    </div>
-
-
-
-                  </Link>
-
-
-
-                  <br></br><br></br>
-
-                  <Link to="/minimum">
-                  <div className="center">Minimalist
-                    <img class="responsive-img" alt="minimalDorm" src={minImage} />
-                  </div>
-                  </Link>
-                  
-
-
                 </Grid>
+                <Grid item xs={6}>
+                <div className="left orange-text 20px">
+                  <ul>
+                    <li>[  ] Fuzzy Chair Cover</li>
+                    <li>[  ] Pink Pillows</li>
+                    <li>[  ] Pink Throw Blanket</li>
+                    <li>[  ] Heart Wall Art</li>
+                    <li>[  ] Pink Carpet</li>
+                    <li>[  ] Flowers in Vase</li>
+                    <li>[  ] Neon Desk Light</li>
+                    <li>[  ] Draping Wall Lights</li>                
+                                     
+                 </ul>
+                   </div>    
+                </Grid>                 
 
+
+                                    
               </Grid>
             </div>
           </div>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br>
+         
         </Grid>
 
         
@@ -114,4 +91,4 @@ const Dashboard = (props) => {
   );
 };
 
-export default Dashboard;
+export default PinkDorm;

@@ -5,12 +5,12 @@ import DormContext from "../../utils/dormContext";
 import API from "../../utils/apiHelper";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import pinkImage from "../../assets/pinkDorm.png";
+// import pinkImage from "../../assets/pinkDorm.png";
 import gamerImage from "../../assets/gamerDorm.png";
-import minImage from "../../assets/minimalDorm.png";
-// import Image from "material-ui-image";
+// import minImage from "../../assets/minimalDorm.png";
 
-const Dashboard = (props) => {
+
+const GamerDorm = (props) => {
   const { state, dispatch } = useContext(Store);
   const user = state.auth.user;
 
@@ -64,38 +64,17 @@ const Dashboard = (props) => {
 
                 <Grid item justify="auto" xs={12} spacing={4}>
 
-                  <Link to="/pinkout">
-                    <div className="center">All Out Pink
-                       <img className="responsive-img" alt="pinkDorm" src={pinkImage} />
-                    </div>
-
-
-                  </Link>
-
-
-
-                  <br></br><br></br>
-
-                  
-                  <Link to="/gamer">
-
-                    <div className="center">Gamer
+                    <div className="center orange-text">Gamer
                           <img class="responsive-img" alt="battleDorm" src={gamerImage} />
                     </div>
 
 
 
-                  </Link>
+                  {/* </Link> */}
 
 
 
                   <br></br><br></br>
-
-                  <Link to="/minimum">
-                  <div className="center">Minimalist
-                    <img class="responsive-img" alt="minimalDorm" src={minImage} />
-                  </div>
-                  </Link>
                   
 
 
@@ -114,4 +93,4 @@ const Dashboard = (props) => {
   );
 };
 
-export default Dashboard;
+export default GamerDorm;

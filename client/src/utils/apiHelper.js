@@ -7,8 +7,8 @@ const userController = {
   },
 
   // Gets all robot motions
-  getRobotMotions: () => {
-    return axios.get(`/api/users/robotmotions`);
+  getDormChoices: () => {
+    return axios.get(`/api/users/dormChoices`);
   },
 
   // Gets all favorites

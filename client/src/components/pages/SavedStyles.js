@@ -42,15 +42,11 @@ const SavedStyles = (props) => {
       .catch((err) => console.log({ err }));
   }, [state, props]);
 
-  // const onLogoutClick = (e) => {
-  //   e.preventDefault();
-
-  //   logoutUser(props.history)(dispatch);
-  // };
+  
 
   const motionBtn = (e) => {
     e.preventDefault();
-    API.postRobotMotions({
+    API.postDormChoices({
       motions: {
         channel: e.currentTarget.getAttribute("channel"),
         pulse: e.currentTarget.getAttribute("pulse"),
@@ -58,10 +54,7 @@ const SavedStyles = (props) => {
     })
       .then()
       .catch((err) => ({ err }));
-    // console.log(
-    //   e.currentTarget.getAttribute("channel"),
-    //   e.currentTarget.getAttribute("pulse")
-    // );
+   
   };
 
   const deleteBtn = (e, id) => {
@@ -72,23 +65,20 @@ const SavedStyles = (props) => {
     )
       .then(res => loadFavorites())
       .catch((err) => ({ err }));
-    // console.log(
-    //   e.currentTarget.getAttribute("channel"),
-    //   e.currentTarget.getAttribute("pulse")
-    // );
+ 
   };
 
- const loadFavorites = () => {
+  const loadFavorites = () => {
     API.getFavorites()
-      .then((motions) => {
-        setFavorites(motions.data);
-        console.log(motions.data);
+      .then((choices) => {
+        setFavorites(choices.data);
+        console.log(choices.data);
       })
       .catch((err) => console.log({ err }));
   }
 
 
-  // Run a GET request on the page load to grab the motor motions saved in the DB
+  
   useEffect(() => {
     loadFavorites();
   }, [
@@ -102,61 +92,37 @@ const SavedStyles = (props) => {
     <Container>
       <Grid container direction="row">
         <Grid item>
-            <h4>
-              <p style={{ fontWeight:600, textAlign:'center' }}>Your Saved Items!</p>
-            </h4>
-            <img class="responsive-img" alt="logoRoboArm" src={pinkImage} />
+          <h4>
+            <p style={{ fontWeight: 600, textAlign: 'center' }}>Your Saved Items!</p>
+          </h4>
+          <img class="responsive-img" alt="dormChoices" src={pinkImage} />
         </Grid>
         <Grid item>
-        <br></br>
-        <h5>
-              <b>{user.name.split(" ")[0]}</b>, your saved choices are below:
+          <br></br>
+          <h5>
+            <b>{user.name.split(" ")[0]}</b>, your saved choices are below:
             </h5>
-          <Card>
-            <CardContent>
-          <ButtonGroup
-           
-            padding="50px"
-            orientation="vertical"
-            color="secondary"
-            aria-label="vertical button"
-          >
-            {favorites.map((motion) => (
-              <div>
-                <Button
-                  classes={{
-                    root: classes.root, // class name, e.g. `classes-nesting-root-x`
-                    label: classes.label, // class name, e.g. `classes-nesting-label-x`
-                  }}
 
-                  endIcon={<Icon>send</Icon>}
-                  key={motion._id}
-                  // direction={motion.motions}
-                  channel={motion.motions[0].channel}
-                  pulse={motion.motions[0].pulse}
-                  onClick={motionBtn}
-                >
-                  {motion.motorLocation} - {motion.direction}
-                </Button>
-                <Button
-                  classes={{
-                    root: classes.root, // class name, e.g. `classes-nesting-root-x`
-                    label: classes.label, // class name, e.g. `classes-nesting-label-x`
-                  }}
-                  startIcon={<DeleteIcon />}
-                  location={motion.motorLocation}
-                  direction={motion.direction}
-                  channel={motion.motions[0].channel}
-                  pulse={motion.motions[0].pulse}
-                  id={motion._id}
-                  onClick={(e)=> deleteBtn(e, motion._id)}
-                />
-              </div>
-            ))}
-          </ButtonGroup>
-          </CardContent>
-          </Card>
         </Grid>
+
+        <Grid item xs={6}>
+          <div className="left orange-text 20px">
+            <ul>
+              <li>
+              <a rel="noopener noreferrer" href="https://www.amazon.com/Jinzio-Computer-Office-Chair-Cover/dp/B07T6FVCZF/ref=sr_1_2?dchild=1&keywords=pink+desk+chair+covers+stretchable&qid=1614996292&sr=8-2" target="_blank">Fuzzy Chair Cover</a></li>
+              <li><a rel="noopener noreferrer" href="https://www.amazon.com/Jinzio-Computer-Office-Chair-Cover/dp/B07T6FVCZF/ref=sr_1_2?dchild=1&keywords=pink+desk+chair+covers+stretchable&qid=1614996292&sr=8-2" target="_blank">Pink Pillows</a></li>
+              <li><a rel="noopener noreferrer" href="https://www.amazon.com/Jinzio-Computer-Office-Chair-Cover/dp/B07T6FVCZF/ref=sr_1_2?dchild=1&keywords=pink+desk+chair+covers+stretchable&qid=1614996292&sr=8-2" target="_blank">Pink Throw Blanke</a></li>
+              <li><a rel="noopener noreferrer" href="https://www.amazon.com/Jinzio-Computer-Office-Chair-Cover/dp/B07T6FVCZF/ref=sr_1_2?dchild=1&keywords=pink+desk+chair+covers+stretchable&qid=1614996292&sr=8-2" target="_blank">Flowers in Vase</a></li>
+              <li><a rel="noopener noreferrer" href="https://www.amazon.com/Jinzio-Computer-Office-Chair-Cover/dp/B07T6FVCZF/ref=sr_1_2?dchild=1&keywords=pink+desk+chair+covers+stretchable&qid=1614996292&sr=8-2" target="_blank">Neon Desk Light</a></li>
+ 
+            
+            
+
+            </ul>
+          </div>
+        </Grid>
+
+
       </Grid>
     </Container>
   );
