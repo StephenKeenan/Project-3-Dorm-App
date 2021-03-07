@@ -14,7 +14,9 @@ import Login from "./components/pages/Login";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import Dashboard from "./components/pages/Dashboard";
 import SavedStyles from "./components/pages/SavedStyles";
-
+import PinkDorm from "./components/pages/PinkDorm";
+import GamerDorm from "./components/pages/GamerDorm";
+import MinDorm from "./components/pages/MinDorm";
 const App = () => {
   const { dispatch } = useContext(Store);
 
@@ -45,6 +47,9 @@ const App = () => {
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/saveDorm" component={SavedStyles} />
+          <PrivateRoute exact path="/pinkout" component={PinkDorm} />
+          <PrivateRoute exact path="/gamer" component={GamerDorm} />
+          <PrivateRoute exact path="/minimum" component={MinDorm} />
         </Switch>
         <Footer />
       </div>

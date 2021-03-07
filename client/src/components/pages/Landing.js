@@ -21,7 +21,7 @@ const Landing = props => {
           </p>
           <br />
           <div className="col s6">
-            <Link to="/register" className="btn btn-large waves-effect waves-light hoverable amber darken-4" style={{
+            <Link to="/register" className="btn waves-effect waves-light hoverable amber darken-4" style={{
               width: '140px',
               borderRadius: '50px',
               letterSpacing: '3px',
@@ -32,7 +32,7 @@ const Landing = props => {
             </Link>
           </div>
           <div className="col s6">
-            <Link to="/login" className="btn btn-large waves-effect waves-light hoverable amber darken-4" style={{
+            <Link to="/login" className="btn waves-effect waves-light hoverable amber darken-4" style={{
               width: '140px',
               borderRadius: '50px',
               letterSpacing: '2px',

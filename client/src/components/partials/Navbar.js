@@ -36,9 +36,7 @@ const Navbar = (props) => {
             color: "#ff6f00",
           }}
         >
-          <span>
-            <img alt="schoolLogo" src={logo} height="40px" width="40px" />{" "}
-          </span>
+          
           DormApp 
          
         </NavLink>
