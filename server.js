@@ -9,7 +9,6 @@ const bodyParser = require("body-parser");
 // Routes
 const authRoutes = require("./routes/auth");
 const usersRoutes = require("./routes/users");
-// const robotRoutes = require("./routes/robot");
 const favoriteRoutes = require("./routes/favorites");
 
 const PORT = process.env.PORT || 3001;
@@ -24,14 +23,16 @@ app.use(bodyParser.json());
 mongoose
   .connect(
     process.env.MONGODB_URI ||
-      `mongodb://localhost:27017/${process.env.MONGODB_DATABASE}`,
+      'mongodb://localhost:dormApp_db',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
     }
-  )
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+  );
+  // .then(() => console.log("MongoDB connected"))
+  // .catch((err) => console.log(err));
 
 // Passport JWT setup.
 app.use(passport.initialize());
@@ -59,18 +60,4 @@ const server = app.listen(PORT, () => {
   console.log(`Server is listening at http://localhost:${PORT}`);
 });
 
-// // socket.io connection to Rasberry Pi
-// const io = require("socket.io")(server);
 
-// io.on("connection", (socket) => {
-//   // console.log("socket connected", socket.id);
-
-//   socket.on("pwmpulse", (channel, pulse) => {
-//     io.sockets.emit("pwmpulse", channel, pulse);
-//     // console.log(channel, pulse);
-//   });
-
-//   socket.on("pwmstop", () => {
-//     io.sockets.emit("pwmstop");
-//   });
-// });
