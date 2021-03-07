@@ -4,23 +4,19 @@ let db = require("../models");
 // moogose.connect("mongodb://localhost/robotArm_db", {                             dormApp_db
 
 moogose.connect(
-  "mongodb+srv://root:12345@cluster0.cuzc6.mongodb.net/robotArm_db?retryWrites=true&w=majority",
+  "mongodb+srv://root:12345@cluster0.cuzc6.mongodb.net/dormApp_db?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
   }
 );
 
-let robotSeed = [
+let dormGear = [
   {
-    motorLocation: "base",
-    direction: "left",
-    motions: [
-      {
-        channel: 0,
-        pulse: 500,
-      },
-    ],
+    wall: "heart",
+    bed: "pink",
+    carpet: "shag",
+    art: "Picasso"
   },
   {
     motorLocation: "base",
